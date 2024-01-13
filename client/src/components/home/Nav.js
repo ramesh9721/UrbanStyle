@@ -17,7 +17,7 @@ const Nav = () => {
         <div className="my-container">
           <div className="flex justify-between items-center">
             <Link to="/">
-              <img src="/Shopping.png" className="h-full object-cover w-[150px]" alt="logo" />
+              <img src="/logo.png" className="h-[100px] object-cover w-[150px]" alt="logo" />
             </Link>
             <ul className="flex items-center">
               <li className="nav-li cursor-pointer">

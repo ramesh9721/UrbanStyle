@@ -16,6 +16,7 @@ const UserOrders = () => {
   page = page ? page : 1;
   const { user } = useSelector((state) => state.authReducer);
   const { data, isFetching } = useGetOrdersQuery({ page, userId: user.id });
+  console.log(data)
   const [updateOrder, response] = useReceivedOrderMutation();
   const orderReceived = (id) => {
     updateOrder(id);

@@ -11,6 +11,7 @@ import {
   incQuantity,
   decQuantity,
   removeItem,
+  emptyCart
 } from "../../store/reducers/cartReducer";
 import { Link } from "react-router-dom";
 import { useSendPaymentMutation } from "../../store/services/paymentService";
@@ -46,8 +47,11 @@ const Cart = () => {
   useEffect(() => {
     if (response?.isSuccess) {
       window.location.href = response?.data?.url;
+      cart.forEach((item) => {
+        dispatch(removeItem(item._id));
+      });
     }
-  }, [response]);
+  }, [response,dispatch]);
 
   return (
     <>

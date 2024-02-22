@@ -8,7 +8,8 @@ const AdminLogin = () => {
     const navigate = useNavigate();
     const [state, setState] = useState({
         email: '',
-        password: ''
+        password: '',
+        
     })
     const handleInputs = e => {
         setState({...state, [e.target.name]: e.target.value })

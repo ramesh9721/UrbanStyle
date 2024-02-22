@@ -8,7 +8,7 @@ const Orders = () => {
   let { page } = useParams();
   page = page ? page : 1;
   const { data, isFetching } = useGetOrdersQuery(page);
-  // console.log(data);
+  console.log(data);
   return (
     <Wrapper>
       <ScreenHeader>Orders</ScreenHeader>
@@ -30,11 +30,11 @@ const Orders = () => {
                 <tbody>
                   {data?.orders?.map((order) => (
                     <tr key={order._id}>
-                      <td className="dashboard-td">{order.productId.title}</td>
+                      <td className="dashboard-td">{order.productId?.title}</td>
                       <td className="dashboard-td">{order.quantities}</td>
                       <td className="dashboard-td">
                         <img
-                          src={`/images/${order.productId.image1}`}
+                          src={`/images/${order.productId?.image1}`}
                           alt="products"
                           className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] rounded-full object-cover"
                         />

@@ -1,4 +1,13 @@
 const { Schema, model, Types } = require("mongoose");
+
+const AddressSchema = new Schema({
+  line1: String,
+  line2: String,
+  city: String,
+  state: String,
+  postalCode: String,
+  country: String
+});
 const orderSchema = Schema(
   {
     productId: { type: Types.ObjectId, ref: "product" },
@@ -21,7 +30,7 @@ const orderSchema = Schema(
     },
     address: {
       required: true,
-      type: Map,
+      type: AddressSchema
     },
     status: {
       default: false,

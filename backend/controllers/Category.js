@@ -22,7 +22,7 @@ class Category {
   }
   async categories(req, res) {
     const page = req.params.page;
-    const perPage = 3;
+    const perPage = 4;
     const skip = (page - 1) * perPage;
     try {
       const count = await CatgoryModel.find({}).countDocuments();

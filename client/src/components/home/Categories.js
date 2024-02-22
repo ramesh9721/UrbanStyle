@@ -6,7 +6,7 @@ import Skeleton from "../skeleton/Skeleton";
 import Thumbnail from "../skeleton/Thumbnail";
 const Categories = () => {
   const { data, isFetching } = useAllCategoriesQuery();
-  let i = 1;
+  let i = 0;
   return isFetching ? (
     <div className="flex flex-wrap -mx-4 mb-10">
       {[1, 2, 3, 4, 5, 6].map((item) => (
@@ -60,7 +60,7 @@ const Categories = () => {
             >
               <div className="w-full h-[150px] rounded-lg overflow-hidden">
                 <img
-                  src={`./images/slider/${i}.png`}
+                  src={`./images/slider/${i}.jpg`}
                   className="w-full h-full object-cover"
                   alt=""
                 />

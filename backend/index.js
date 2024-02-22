@@ -16,7 +16,7 @@ app.post(
   "/api/webhook",
   express.json({
     verify: (req, res, buf) => {
-      req.rawBody = buf.toString();
+      req.rawbody = buf.toString();
     },
   })
 );
@@ -24,7 +24,7 @@ app.post(
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ msg: "Welcome to shopmandu" });
+  res.json({ msg: "Welcome to Urban Style" });
 });
 // user routes
 app.use("/api", userRoutes);

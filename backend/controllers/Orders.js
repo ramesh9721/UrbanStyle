@@ -1,5 +1,31 @@
 const OrderModel = require("../models/OrderModel");
 class Orders {
+
+  async createOrder(req, res) {
+    try {
+        // Retrieve order details from request body
+        const { productId, userId,title, size, color, quantities, address } = req.body;
+
+        // Create the order using the OrderModel
+        const newOrder = await OrderModel.create({
+            productId,
+            userId,
+            title,
+            size,
+            color,
+            quantities,
+            address
+        });
+
+        // Respond with the newly created order
+        return res.status(201).json({ message: "Order created successfully", order: newOrder });
+    } catch (error) {
+        console.log("lol")
+        console.error("Error creating order:", error.message);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+}
+
   async getOrders(req, res) {
     const query = req.query;
     const perPage = 5;
